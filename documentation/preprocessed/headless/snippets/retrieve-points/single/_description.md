@@ -1,0 +1,5 @@
+Retrieve a single point from a collection using the specified point ID. The method supports additional parameters `with_vectors` and `with_payload` to indicate which parts of the point should be included in the result, optimizing data transmission by excluding unnecessary information.
+
+```http
+GET /collections/{collection_name}/points/{point_id}
+```

@@ -1,0 +1,157 @@
+Semantic search for "time travel" that excludes points where the `author` payload equals `H.G. Wells`.
+
+```csharp
+using Qdrant.Client;
+using Qdrant.Client.Grpc;
+using static Qdrant.Client.Grpc.Conditions;
+
+var excludeFilter = new Filter { MustNot = { MatchKeyword("author", "H.G. Wells") } };
+
+await client.QueryAsync(
+    collectionName: "books",
+    query: new Document
+    {
+        Text = "time travel",
+        Model = "sentence-transformers/all-minilm-l6-v2",
+    },
+    usingVector: "description-dense",
+    filter: excludeFilter,
+    payloadSelector: true
+);
+```
+
+
+```go
+excludeFilter := qdrant.Filter{
+	MustNot: []*qdrant.Condition{
+		qdrant.NewMatch("author", "H.G. Wells"),
+	},
+}
+
+client.Query(context.Background(), &qdrant.QueryPoints{
+	CollectionName: "books",
+	Query: qdrant.NewQueryNearest(
+		qdrant.NewVectorInputDocument(&qdrant.Document{
+			Model: "sentence-transformers/all-minilm-l6-v2",
+			Text:  "time travel",
+		}),
+	),
+	Using:       qdrant.PtrOf("description-dense"),
+	WithPayload: qdrant.NewWithPayload(true),
+	Filter:      &excludeFilter,
+})
+```
+
+
+```http
+POST /collections/books/points/query
+{
+  "query": {
+    "text": "time travel",
+    "model": "sentence-transformers/all-minilm-l6-v2"
+  },
+  "using": "description-dense",
+  "with_payload": true,
+  "filter": {
+    "must_not": [
+      {
+        "key": "author",
+        "match": {
+          "value": "H.G. Wells"
+        }
+      }
+    ]
+  }
+}
+```
+
+```java
+import static io.qdrant.client.ConditionFactory.*;
+import static io.qdrant.client.QueryFactory.nearest;
+import static io.qdrant.client.WithPayloadSelectorFactory.enable;
+
+import io.qdrant.client.QdrantClient;
+import io.qdrant.client.QdrantGrpcClient;
+import io.qdrant.client.grpc.Common.Filter;
+import io.qdrant.client.grpc.Points.*;
+
+QdrantClient client =
+
+Filter filter = Filter.newBuilder().addMustNot(matchKeyword("author", "H.G. Wells")).build();
+
+client
+    .queryAsync(
+        QueryPoints.newBuilder()
+            .setCollectionName("books")
+            .setQuery(
+                nearest(
+                    Document.newBuilder()
+                        .setText("time travel")
+                        .setModel("sentence-transformers/all-minilm-l6-v2")
+                        .build()))
+            .setUsing("description-dense")
+            .setFilter(filter)
+            .setWithPayload(enable(true))
+            .build())
+    .get();
+```
+
+
+```python
+from qdrant_client import QdrantClient, models
+
+client = QdrantClient(
+    url="https://xyz-example.qdrant.io:6333",
+    api_key="<your-api-key>",
+    cloud_inference=True,
+)
+
+client.query_points(
+    collection_name="books",
+    query=models.Document(text="time travel", model="sentence-transformers/all-minilm-l6-v2"),
+    using="description-dense",
+    with_payload=True,
+    query_filter=models.Filter(
+        must_not=[models.FieldCondition(key="author", match=models.MatchValue(value="H.G. Wells"))]
+    ),
+)
+```
+
+
+```rust
+use qdrant_client::Qdrant;
+use qdrant_client::qdrant::{Condition, Document, Filter, Query, QueryPointsBuilder};
+
+let filter = Filter::must_not([Condition::matches("author", "H.G. Wells".to_string())]);
+
+client
+    .query(
+        QueryPointsBuilder::new("books")
+            .query(Query::new_nearest(Document::new(
+                "time travel",
+                "sentence-transformers/all-minilm-l6-v2",
+            )))
+            .using("description-dense")
+            .filter(filter)
+            .with_payload(true)
+            .build(),
+    )
+    .await?;
+```
+
+
+```typescript
+client.query("books", {
+  query: {
+    text: "time travel",
+    model: "sentence-transformers/all-minilm-l6-v2",
+  },
+  using: "description-dense",
+  with_payload: true,
+  filter: {
+    must_not: [
+      { key: "author", match: { value: "H.G. Wells" } },
+    ],
+  },
+});
+```

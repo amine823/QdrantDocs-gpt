@@ -1,0 +1,12 @@
+This code snippet creates a collection configured to store and index documents using miniCOIL sparse neural retrieval. It defines a sparse named vector with the IDF modifier enabled, so that the Inverse Document Frequency is calculated and applied to keywords as required by the miniCOIL scoring formula. This setup allows Qdrant to use miniCOIL’s BM25-inspired retrieval with contextual semantic weighting of matched keywords.
+
+```python
+client.create_collection(
+    collection_name="{minicoil_collection_name}",
+    sparse_vectors_config={
+        "minicoil": models.SparseVectorParams(
+            modifier=models.Modifier.IDF #Inverse Document Frequency
+        )
+    }
+)
+```

@@ -1,0 +1,5 @@
+This code allows downloading the full storage snapshot specified by its name. Please note that this functionality is currently accessible only through the REST API.
+
+```http
+GET /snapshots/{snapshot_name}
+```

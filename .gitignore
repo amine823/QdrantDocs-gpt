@@ -1,0 +1,48 @@
+# Environment files
+.env
+*.env.local
+# Python
+venv/
+.venv/
+__pycache__/
+node_modules/
+dist/
+#data & models
+qdrant_storage/
+models/
+qdrant_data;C/
+# editor files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.log
+#
+search/
+
+# Frontend-specific
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+frontend/.env
+
+# Logs (applies everywhere)
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
