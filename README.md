@@ -1,4 +1,4 @@
-# QdrantDocs gpt – AI-Powered RAG Assistant for Qdrant Documentation
+# 💻 QdrantDocs gpt – AI-Powered RAG Assistant for Qdrant Documentation
 
 A Retrieval-Augmented Generation (RAG) assistant built for searching and interacting with the Qdrant documentation using hybrid vector search techniques.
 
@@ -17,7 +17,7 @@ This project combines:
 
 ---
 
-## Screenshots
+## 🖼️ Screenshots
 
 <p align="center">
   <img src="frontend/public/screenshot1.png" width="45%" />
@@ -29,7 +29,7 @@ This project combines:
   <img src="frontend/public/screenshot4.png" width="45%" />
 </p>
 
-## Architecture
+## 🧩 Architecture
 
 ```text
 User Query
@@ -52,7 +52,7 @@ React Frontend UI
 
 ---
 
-## Tech Stack
+## 🔧 Tech Stack
 
 ### Backend
 - Python
@@ -77,7 +77,7 @@ React Frontend UI
 - ColBERT late interaction retrieval
 ---
 
-## Project Structure
+## ⚙️ Project Structure
 
 ```text
 qdrant-search/
@@ -128,7 +128,7 @@ qdrant-search/
 
 ---
 
-## Retrieval Pipeline
+## 🎯 Retrieval Pipeline
 
 The system uses a complete RAG workflow:
 
@@ -143,7 +143,7 @@ The system uses a complete RAG workflow:
 
 ---
 
-## Evaluation
+## 👁️ Evaluation
 
 The project includes evaluation experiments comparing:
 
@@ -200,7 +200,7 @@ nDCG@5    : 0.6162
 
 ---
 
-# Setup
+# 🔗 Setup
 
 ## Prerequisites
 
@@ -244,7 +244,7 @@ cd frontend && npm install
 
 ---
 
-## Environment Variables
+## 🐛 Environment Variables
 Create:
 
 ```text
@@ -260,7 +260,7 @@ QDRANT_API_KEY=
 ```
 ---
 
-## Qdrant Setup
+## 🧾 Qdrant Setup
 
 ### Option A — Local Qdrant (Recommended)
 
@@ -289,7 +289,7 @@ QDRANT_API_KEY=your-qdrant-api-key
 
 ---
 
-## Running the Application
+## ⭐Running the Application
 
 ### Start Backend
 
@@ -334,7 +334,7 @@ Streams the LLM response back to the frontend.
 
 ---
 
-## Example Questions
+## 📄Example Questions
 
 - What is the difference between sparse and dense vectors?
 - How does hybrid search work in Qdrant?
@@ -368,7 +368,7 @@ Streams the LLM response back to the frontend.
 
 ---
 
-## Author
+## ⚡Author
 
 **Mohamed Amine Ezzeddine**
 
