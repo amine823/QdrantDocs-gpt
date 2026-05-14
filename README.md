@@ -2,11 +2,12 @@
 
 A Retrieval-Augmented Generation (RAG) assistant built for searching and interacting with the Qdrant documentation using hybrid vector search techniques.
 
-The project combines:
+This project combines:
 
 - Dense embeddings
 - Sparse embeddings
 - Hybrid retrieval
+- Reciprocal Rank Fusion (RRF)
 - ColBERT reranking
 - HNSW
 - Streaming LLM responses
@@ -16,21 +17,17 @@ The project combines:
 
 ---
 
-## Features
+## Screenshots
 
-- AI-powered documentation assistant
-- Hybrid search (Dense + Sparse)
-- Reciprocal Rank Fusion (RRF)
-- ColBERT late interaction reranking
-- Streaming responses in real time
-- Modern ChatGPT-like UI
-- Conversation history
-- Local Qdrant via Docker
-- BYOK (Bring Your Own API Key)
-- Markdown rendering
-- Evaluation pipeline for retrieval quality testing
+<p align="center">
+  <img src="frontend/public/screenshot1.png" width="45%" />
+  <img src="frontend/public/screenshot2.png" width="45%" />
+</p>
 
----
+<p align="center">
+  <img src="frontend/public/screenshot3.png" width="45%" />
+  <img src="frontend/public/screenshot4.png" width="45%" />
+</p>
 
 ## Architecture
 
@@ -357,14 +354,6 @@ Streams the LLM response back to the frontend.
 - Document upload support
 - Multi-source RAG
 - Cloud deployment
-
----
-
-## Screenshots
-
-```text
-frontend/public/screenshot.png
-```
 
 ---
 
