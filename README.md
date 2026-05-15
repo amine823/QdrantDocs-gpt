@@ -43,7 +43,7 @@ This project combines:
 - [📄 Example Questions](#-example-questions)
 - [Future Improvements](#future-improvements)
 - [Acknowledgements](#acknowledgements)
-- [⚡ Author](#-author)
+- [⚡ Author](#author)
 
 ---
 
