@@ -17,6 +17,36 @@ This project combines:
 
 ---
 
+## 📑 Table of Contents
+
+- [🖼️ Screenshots](#-screenshots)
+- [🧩 Architecture](#-architecture)
+- [🔧 Tech Stack](#-tech-stack)
+- [⚙️ Project Structure](#️-project-structure)
+- [🎯 Retrieval Pipeline](#-retrieval-pipeline)
+- [👁️ Evaluation](#️-evaluation)
+- [🔗 Setup](#-setup)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+    - [1. Clone Repository](#1-clone-repository)
+    - [Activate Virtual Environment](#activate-virtual-environment-)
+    - [Install dependencies](#install-dependencies)
+- [🐛 Environment Variables](#-environment-variables)
+- [🧾 Qdrant Setup](#-qdrant-setup)
+  - [Option A — Local Qdrant (Recommended)](#option-a--local-qdrant-recommended)
+  - [Option B — Qdrant Cloud](#option-b--qdrant-cloud)
+- [⭐ Running the Application](#-running-the-application)
+  - [Start Backend](#start-backend)
+  - [Start Frontend](#start-frontend)
+- [📄 API Endpoint](#-api-endpoint)
+  - [Chat Endpoint](#chat-endpoint)
+- [📄 Example Questions](#-example-questions)
+- [Future Improvements](#future-improvements)
+- [Acknowledgements](#acknowledgements)
+- [⚡ Author](#-author)
+
+---
+
 ## 🖼️ Screenshots
 
 <p align="center">
