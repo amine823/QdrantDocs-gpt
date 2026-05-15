@@ -19,7 +19,7 @@ This project combines:
 
 ## 📑 Table of Contents
 
-- [🖼️ Screenshots](#-screenshots)
+- [🖼️ Screenshots](#screenshots)
 - [🧩 Architecture](#-architecture)
 - [🔧 Tech Stack](#-tech-stack)
 - [⚙️ Project Structure](#️-project-structure)
