@@ -70,11 +70,11 @@ React Frontend UI
 - React Query
 
 ### Retrieval Techniques
-- Dense vector search
-- Sparse vector search
+- Dense vector search (BAAI/bge-base-en-v1.5)
+- Sparse vector search (prithivida/Splade_PP_en_v1)
 - Hybrid search
 - Reciprocal Rank Fusion (RRF)
-- ColBERT late interaction retrieval
+- ColBERT late interaction retrieval (colbert-ir/colbertv2.0)
 ---
 
 ## ⚙️ Project Structure
@@ -135,7 +135,7 @@ The system uses a complete RAG workflow:
 1. Raw Qdrant Markdown documentation collected
 2. Documents cleaned and preprocessed
 3. Text chunking performed
-4. Embeddings generated
+4. Embeddings generated (Dense, Sparse, Colbert)
 5. Data ingested into Qdrant
 6. Hybrid retrieval executed
 7. Relevant context sent to LLM
@@ -145,7 +145,7 @@ The system uses a complete RAG workflow:
 
 ## 👁️ Evaluation
 
-The project includes evaluation experiments comparing:
+I did some evaluation experiments of my system comparing:
 
 - Dense retrieval
 - Sparse retrieval
@@ -153,10 +153,20 @@ The project includes evaluation experiments comparing:
 - ColBERT retrieval
 with differencet HNSW configs .
 
-Evaluation was performed using:
+**Evaluation was performed using:**
 - Custom query sets
 - Ground-truth expected answers
 - Retrieval relevance testing
+
+**Evaluation metrics used :** 
+- *Mean Reciprocal Rank (MRR)* : measures the effectiveness of information retrieval and ranking systems, focuses on the position of the first relevant result in a ranked list.
+- *P@10 (Precision at 10):* measures the proportion of relevant items found within the top 10 results of a ranked list.
+- *P@5 (Precision at 5)
+- *R@10 (Recall at 10):* measures the proportion of all relevant items that are successfully retrieved within the top 10 results of a ranked list.
+- *R@5 (Recall at 5)
+- *nDCG@10 (Normalized Discounted Cumulative Gain at 10):* measures the quality of the top 10 results in a list, considering both the relevance of each item and its position.
+- *nDCG@5 (Normalized Discounted Cumulative Gain at 5)*
+
 
 ============================================================
 ## Evaluation Results
@@ -347,7 +357,7 @@ Streams the LLM response back to the frontend.
 ## Future Improvements
 
 - Multi-model support
-- User-provided API keys
+- User-provided API keys through ui.
 - Authentication
 - Citation highlighting
 - Conversation export
