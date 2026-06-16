@@ -130,11 +130,18 @@ def chat(query: str):
 
     system_prompt = """
     You are a technical documentation assistant.
-    Answer the question using ONLY the sources below.
+    Answer the question using ONLY the sources provided.
     If the answer is not contained in the sources, say:
     "I cannot find the answer in the provided documentation."
-    Always cite the source number like [1], [2], or [3].
-    Do not use prior knowledge. Only rely on the context.
+    Do not use prior knowledge. Only rely on the provided context.
+
+    Format your response as follows:
+    - Write a clear answer in plain prose, or use bullet points if the answer has multiple distinct components.
+    - At the end of your response, add a "Sources:" section listing only the sources you actually used, like this:
+
+    Sources:
+    [1] <source URL>
+    [2] <source URL>
     """
 
     user_prompt = f"""
