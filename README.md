@@ -35,6 +35,10 @@ This project combines:
 - [🧾 Qdrant Setup](#-qdrant-setup)
   - [Option A — Local Qdrant (Recommended)](#option-a--local-qdrant-recommended)
   - [Option B — Qdrant Cloud](#option-b--qdrant-cloud)
+  - [📔Qdrant Collection Set Up](#-qdrant-collection-set-up)
+    - [Create New Collection](#create-new-collection)
+    - [Hnsw Config](#hnsw-config)
+    - [Embed And Ingest](#embed-and-ingest)
 - [⭐ Running the Application](#-running-the-application)
   - [Start Backend](#start-backend)
   - [Start Frontend](#start-frontend)
@@ -197,6 +201,10 @@ with differencet HNSW configs .
 - *nDCG@10 (Normalized Discounted Cumulative Gain at 10):* measures the quality of the top 10 results in a list, considering both the relevance of each item and its position.
 - *nDCG@5 (Normalized Discounted Cumulative Gain at 5)*
 
+```bash
+cd evaluation
+python evaluation.py
+```
 
 ============================================================
 ## Evaluation Results
@@ -329,13 +337,35 @@ QDRANT_API_KEY=your-qdrant-api-key
 
 ---
 
+## 📔Qdrant Collection Set Up
+
+### Create new collection
+
+```bash
+cd backend
+python create_collection.py
+```
+
+### hnsw config
+
+```bash
+python hnsw.py
+```
+
+### embed and ingest
+
+```bash
+python ingest.py
+```
+✅ all done
+
 ## ⭐Running the Application
 
 ### Start Backend
 
 ```bash
 cd backend
-uvicorn backend.api:app --reload
+uvicorn api:app --reload
 ```
 
 Backend runs on:
